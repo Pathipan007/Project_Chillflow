@@ -65,7 +65,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -2; /* กำหนดให้อยู่ใน layer ด้านหลังสุด */
+    z-index: -2; 
     overflow-y: auto;
 }
 
@@ -73,7 +73,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* ความสูงเท่ากับความสูงของหน้าจอ */
+    height: 100vh;
     width: 100%;
     margin: 0;
     position: fixed;
@@ -81,7 +81,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -3; /* กำหนดให้อยู่ใน layer ด้านหลังสุด */
+    z-index: -3; 
     overflow-y: auto;
 }
 
@@ -91,9 +91,9 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
-    background-clip: padding-box; /* ให้ border ไม่ครอบพื้นหลัง */
-    padding: 3%; /* ปรับขนาดของพื้นหลัง */
-    flex-direction: column; /* กำหนดให้แสดงเป็นคอลัมน์ */
+    background-clip: padding-box; 
+    padding: 3%; 
+    flex-direction: column;
 }
 
 .totaltime::after {
@@ -105,14 +105,14 @@ body {
     bottom: 0;
     border-radius: 20px;
     z-index: -1;
-    opacity: 80%; /* กำหนดความโปร่งแสงของพื้นหลัง */
+    opacity: 80%; 
     background: #000000;
     align-items: center;
     justify-content: center;
     display: flex;
-    margin-left: auto; /* ช่องว่างด้านซ้าย */
-    margin-right: auto; /* ช่องว่างด้านขวา */
-    width: 28%; /* กำหนดความกว้าง */
+    margin-left: auto;
+    margin-right: auto;
+    width: 28%; 
     height: auto;
 }
 
@@ -125,26 +125,28 @@ body {
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
-     margin:auto;
-    width: 93%; /* กำหนดความกว้าง */
+    margin-left: auto; 
+    margin-right: auto;
+    width: 93%; 
     background-color:#EAA615;
-    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+    border-radius: 40px; 
 }
 
 .show-username .imagelogosword{
-    margin:auto;
+    margin-right: 2%;
+    margin-left: 9%;
     width: 10%;
     height: 10%;
 }
 
 .time-list {
     background-color: #ffffff;
-    overflow-y: auto; /* เกิดการเลื่อนแถบเลื่อน */
-    margin-left: auto; /* ช่องว่างด้านซ้าย */
-    margin-right: auto; /* ช่องว่างด้านขวา */
+    overflow-y: auto; 
+    margin-left: auto; 
+    margin-right: auto; 
     height: 50%;
-    width: 93%; /* กำหนดความกว้าง */
-    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+    width: 93%; 
+    border-radius: 40px;
     margin-bottom: 10%;
 }
 
@@ -162,7 +164,7 @@ body {
     width: 93%;
     height: auto;
     box-shadow: 50px 50px 50px rgba(255, 255, 255, 0.25);
-    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+    border-radius: 40px; 
 }
 
 .time-item::after {
@@ -172,15 +174,15 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+    border-radius: 40px;
     z-index: -1;
-    opacity: 25%; /* กำหนดความโปร่งแสงของพื้นหลัง */
-    background-color: #EAA615; /* ตั้งค่าสีพื้นหลังเป็นโปร่งใส */
+    opacity: 25%; 
+    background-color: #EAA615; 
 }
 
 .date-time {
-    position: relative; /* เพื่อให้เส้นขอบอยู่หน้าข้อความ */
-    z-index: 1; /* ให้ข้อความอยู่หน้าเส้นขอบ */
+    position: relative; 
+    z-index: 1; 
     margin-left: 2%;
     left: 0;
 }
@@ -205,8 +207,8 @@ body {
 }
 
 .border-timedata {
-    display: flex; /* เพิ่ม */
-    justify-content: center; /* เพิ่ม */
+    display: flex; 
+    justify-content: center; 
     flex-direction: column;
     transform: translateX(-3%);
     margin-right: 2%;
@@ -231,9 +233,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
-    opacity: 25%; /* กำหนดความโปร่งแสงของพื้นหลัง */
-    background-color: #261D09; /* ตั้งค่าสีพื้นหลังเป็นโปร่งใส */
+    border-radius: 40px;
+    opacity: 25%; 
+    background-color: #261D09; 
 }
 
 .historytime {
@@ -242,7 +244,7 @@ body {
     font-size: 150%;
     padding-top: 10%;
     position: absolute;
-    right: 0; /* เริ่มจากด้านขวา */
+    right: 0; 
     margin-right: 10%;
 }
 
@@ -251,20 +253,20 @@ body {
     z-index: 3;
     font-size: 60%;
     position: absolute;
-    right: 0; /* เริ่มจากด้านขวา */
+    right: 0; 
     margin-right: 10%;
 }
 
 
 .no-timedata {
     background-color: #ffffff;
-    overflow-y: auto; /* เกิดการเลื่อนแถบเลื่อน */
-    margin-left: auto; /* ช่องว่างด้านซ้าย */
-    margin-right: auto; /* ช่องว่างด้านขวา */
+    overflow-y: auto; 
+    margin-left: auto; 
+    margin-right: auto;
     height: 50%;
-    width: 93%; /* กำหนดความกว้าง */
-    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+    width: 93%; 
+    border-radius: 40px;
     margin-bottom: 10%;
+    margin-top: 10%;
     text-align: center;
 }
-

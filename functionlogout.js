@@ -111,7 +111,7 @@ function reset() {
     clearInterval(startTimer);
 
     if (hr !== "00" || min !== "00" || sec !== "00") {
-        sendTimeToServer(); // เพิ่มบรรทัดนี้เพื่อส่งข้อมูลเวลาไปยังเซิร์ฟเวอร์เมื่อหยุด
+        sendTimeToServer(); 
     }
 
     hr = min = sec = ms = "0" + 0;
@@ -129,12 +129,12 @@ function sendTimeToServer() {
     const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     $.ajax({
         type: "POST",
-        url: "save_time.php", // URL of your PHP file
+        url: "save_time.php", 
         data: {
             hour: hr,
             minute: min,
             second: sec,
-            timezone: timeZone // ส่งโซนเวลาไปด้วย
+            timezone: timeZone 
         },
         success: function(response) {
             console.log('Time saved successfully');
@@ -144,6 +144,21 @@ function sendTimeToServer() {
 }
 
 $('.show-time').click(function(e) {
-    e.preventDefault(); // ป้องกันการโหลดหน้าใหม่
-    window.location.href = $(this).attr('href'); // ส่งไปยังหน้าเว็บใหม่
+    e.preventDefault(); 
+    window.location.href = $(this).attr('href');
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOMContentLoaded event fired LoginSuccess");
+    var detectLoginSuccessPopup = document.querySelector('.login_success');
+    var SuccessPopup = detectLoginSuccessPopup.querySelector('.success');
+  
+    if (SuccessPopup) {
+        console.log("Success popup found");
+        detectLoginSuccessPopup.classList.add('show'); 
+  
+        document.getElementById('back-to-login').addEventListener('click', function() {
+        detectLoginSuccessPopup.classList.remove('show'); 
+        });
+    }
+  });

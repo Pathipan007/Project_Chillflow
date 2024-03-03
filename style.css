@@ -376,3 +376,193 @@
     right: 0;
     bottom: 0;
   }
+
+  .detect_success {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.5s;
+    background-color: rgba(0, 0, 0, 0.8); /* สีพื้นหลัง */
+    border-radius: 10px; /* รอบมุม */
+    color: white; /* สีข้อความ */
+    padding: 20px; /* การเว้นระยะขอบ */
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 998;
+  }
+
+  .detect_success.show {
+    opacity: 1;
+    visibility: visible;  
+  }
+
+  @keyframes slideIn {
+      from {
+          transform: translateY(-50px);
+          opacity: 0;
+      }
+      to {
+          transform: translateY(0);
+          opacity: 1;
+      }
+  }
+
+  @keyframes slideOut {
+      from {
+          transform: translateY(0);
+          opacity: 1;
+      }
+      to {
+          transform: translateY(-50px);
+          opacity: 0;
+      }
+  }
+
+  .detect_success.show .reg_success {
+    animation: slideIn 0.5s forwards;
+  }
+
+  .reg_success {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: slideOutError 0.5s forwards;
+    text-align: center;
+    z-index: 998;
+  }
+
+  .reg_success .text-regsuccess {
+    color: rgb(255, 255, 255);
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(37%);
+    z-index: 10;
+    font-size: 150%;
+  }
+  .reg_success .usersuccess {
+    color: #56FF47;
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(45%);
+    z-index: 10;
+    font-size: 130%;
+  }
+
+  .btn-regbacktologin {
+    width: 50%;
+    height: 45px;
+    background: grey;
+    border: none;
+    outline: none;
+    opacity: 0.95;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: 700;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+  }
+
+
+  .detect_error {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.5s;
+    background-color: rgba(0, 0, 0, 0.8); /* สีพื้นหลัง */
+    border-radius: 10px; /* รอบมุม */
+    color: white; /* สีข้อความ */
+    padding: 20px; /* การเว้นระยะขอบ */
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 998;
+  }
+  
+  .detect_error.showerror {
+    opacity: 1;
+    visibility: visible;  
+  }
+  
+  @keyframes slideInError {
+      from {
+          transform: translateY(-50px);
+          opacity: 0;
+      }
+      to {
+          transform: translateY(0);
+          opacity: 1;
+      }
+  }
+  
+  @keyframes slideOutError {
+      from {
+          transform: translateY(0);
+          opacity: 1;
+      }
+      to {
+          transform: translateY(-50px);
+          opacity: 0;
+      }
+  }
+  
+  .detect_error.showerror .error {
+    animation: slideInError 0.5s forwards;
+  }
+  
+  .error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: slideOutError 0.5s forwards;
+    text-align: center;
+    z-index: 999;
+  }
+
+  .error .text-error {
+    color: rgb(243, 44, 84);
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(40%);
+    z-index: 10;
+    font-size: 130%;
+  }
+  
+  .btn-backtologin {
+    width: 50%;
+    height: 45px;
+    background: grey;
+    border: none;
+    outline: none;
+    opacity: 0.95;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+  }

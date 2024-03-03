@@ -1,4 +1,4 @@
-<?php include('server.php') ?>
+<?php include('server.php'); ?> 
 <!DOCTYPE html>
 <html lang="en">
   <!-- head -->
@@ -30,6 +30,32 @@
         <button class="btnLogin-popup">Login</button>
       </nav>
     </header>
+
+    <div class="detect_success">
+        <?php if (isset($_SESSION['regsuccess'])):?>
+          <div class="reg_success">
+            <h3 class="text-regsuccess">
+            “<?php echo $_SESSION['regsuccess']; unset($_SESSION['regsuccess']);?>”
+            </h3>
+            <h3 class="usersuccess">
+                <?php echo $_SESSION['username'];?>
+            </h3>
+            <button id="back-to-login" class="btn-regbacktologin">Login</button>
+          </div>
+        <?php endif ?>
+    </div>
+
+    <div class="detect_error">
+      <?php if (isset($_SESSION['error'])):?>
+        <div class="error">
+          <h3 class="text-error">
+          “<?php echo $_SESSION['error']; unset($_SESSION['error']);?>”
+          </h3>
+          <button id="back-to-login" class="btn-backtologin">Done</button>
+        </div>
+      <?php endif ?>
+    </div>
+
     <div id="overlay">
       <div id="pop-up">
         <div class="wrapper">
@@ -39,7 +65,7 @@
           ></span>
           <div class="form-box login">
             <h2>Login</h2>
-            <form method="post">
+            <form action="server.php" method="post">
             <?php include('errors.php'); ?>
               <div class="input-box">
                 <span class="icon"
@@ -71,7 +97,7 @@
 
           <div class="form-box register">
             <h2>Register</h2>
-            <form  method="post">
+            <form  action="server.php" method="post">
             <?php include('errors.php'); ?>
               <div class="input-box">
                 <span class="icon"><ion-icon name="mail"></ion-icon></span>

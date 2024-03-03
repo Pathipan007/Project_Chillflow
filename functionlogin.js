@@ -43,4 +43,34 @@ icontime.addEventListener('click', toggleTimeActiveClass);
 iconhome.addEventListener('click', toggleHomeActiveClass);
 iconbg.addEventListener('click', toggleBGActiveClass);
 
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("DOMContentLoaded event fired Error");
+  var detectErrorPopup = document.querySelector('.detect_error');
+  var errorPopup = detectErrorPopup.querySelector('.error');
 
+  if (errorPopup) {
+    console.log("Error popup found");
+    detectErrorPopup.classList.add('showerror');
+
+    document.getElementById('back-to-login').addEventListener('click', function() {
+      detectErrorPopup.classList.remove('showerror');
+      document.querySelector('.btnLogin-popup').click();
+    });
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("DOMContentLoaded event fired Success");
+  var detectSuccessPopup = document.querySelector('.detect_success');
+  var regSuccessPopup = detectSuccessPopup.querySelector('.reg_success');
+
+  if (regSuccessPopup) {
+      console.log("Success popup found");
+      detectSuccessPopup.classList.add('show'); 
+
+      document.getElementById('back-to-login').addEventListener('click', function() {
+        detectSuccessPopup.classList.remove('show'); 
+        document.querySelector('.btnLogin-popup').click();
+      });
+  }
+});

@@ -43,6 +43,19 @@
         <a href="index.php?logout='1'">LOGOUT</a>
       </nav>
     </header>
+    <div class="login_success">
+        <?php if (isset($_SESSION['success'])):?>
+          <div class="success">
+            <h3 class="text-regsuccess">
+            “<?php echo $_SESSION['success']; unset($_SESSION['success']);?>”
+            </h3>
+            <h3 class="usersuccess">
+                <?php echo $_SESSION['username'];?>
+            </h3>
+            <button id="back-to-login" class="btn-backtologin">Done</button>
+          </div>
+        <?php endif ?>
+    </div>
     <div id="overlay">
       <div class="music">
         <iframe style="border-radius:12px" 

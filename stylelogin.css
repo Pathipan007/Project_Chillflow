@@ -254,5 +254,105 @@
     transform: scale(1)  translateY(0);
   }
 
-.bg1{cursor: pointer;}
-.bg2{cursor: pointer;}
+  .bg1{cursor: pointer;}
+  .bg2{cursor: pointer;}
+
+  .login_success {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.5s;
+    background-color: rgba(0, 0, 0, 0.8); 
+    border-radius: 10px; 
+    color: white; 
+    padding: 20px; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 998;
+  }
+
+  .login_success.show {
+    opacity: 1;
+    visibility: visible;  
+  }
+
+  @keyframes slideIn {
+      from {
+          transform: translateY(-50px);
+          opacity: 0;
+      }
+      to {
+          transform: translateY(0);
+          opacity: 1;
+      }
+  }
+
+  @keyframes slideOut {
+      from {
+          transform: translateY(0);
+          opacity: 1;
+      }
+      to {
+          transform: translateY(-50px);
+          opacity: 0;
+      }
+  }
+
+  .login_success.show .success {
+    animation: slideIn 0.5s forwards;
+  }
+
+  .success {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: slideOutError 0.5s forwards;
+    text-align: center;
+    z-index: 998;
+  }
+
+  .success .text-regsuccess {
+    color: rgb(255, 255, 255);
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(37%);
+    z-index: 10;
+    font-size: 150%;
+  }
+  .success .usersuccess {
+    color: #56FF47;
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(45%);
+    z-index: 10;
+    font-size: 130%;
+  }
+
+  .btn-backtologin {
+    width: 50%;
+    height: 45px;
+    background: grey;
+    border: none;
+    outline: none;
+    opacity: 0.95;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: 700;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+  }
