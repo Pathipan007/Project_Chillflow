@@ -1,0 +1,258 @@
+/* ==== Global ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    overflow: hidden;
+  }
+  #overlay {
+    position: fixed; /* Sit on top of the page content */
+    width: 90%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    margin: auto;
+    align-items: center;
+
+  }
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3%    5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    margin-top: -7%;
+  }
+  
+  .logo {
+    margin-left: -25px;
+  }
+  .navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 1000;
+    margin-left: 40px;
+  }
+  
+  .navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width:100vw;
+    background: url('images/bg.gif') no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    justify-content: center;
+    /* margin-left: 5%; */
+  }
+  .toolbars {
+    width: 100%;
+    height: 60px;
+    background: #000000;
+    justify-content: center;
+    opacity: 0.8;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /*border-radius: 10px;*/
+    margin-bottom: 0.5cm;
+    /*border: 1.5px solid azure;*/
+  
+  }
+  
+  .toolbars ul {
+    display: flex;
+    width: 100%;
+  
+  }
+  
+  .toolbars ul li {
+    position: relative;
+    list-style: none;
+    width: 70%;
+    z-index: 99;
+  
+  }
+  
+  .toolbars ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 2px;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  
+  }
+  
+  .toolbars ul li a .icon {
+    position: fixed;
+    display: block;
+    font-size: 250%;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .toolbars ul li a:focus .icon {
+    position: fixed;
+    content: '';
+    margin: auto;
+    display: inline-block;
+    padding: 5px 8px;
+    background: rgb(43, 44, 44);
+    border-radius: 50px;
+    
+    
+  }
+  .icon-music{
+    cursor: pointer;
+  }
+  .music{
+  margin-left: auto;
+    transform: scale(1) translateY(800%) ;
+    transition: transform 1s ease;
+    position:relative;
+
+    
+  }
+  .music.active{
+    transform: scale(1) translateY(110%);
+  }
+  .icon-stat{
+    cursor: pointer;
+  }
+  .icon-time{
+    cursor: pointer;
+  }
+  .icon-home{
+    cursor: pointer;
+  }
+
+  .iconbg{
+    cursor: pointer;
+  }
+
+  .clock {
+    user-select: none;
+    transform: scale(1) translateY(2500%);
+    transition: transform 1s ease;
+  }
+  .clock.active{
+    transform: scale(1) translateY(0);
+  }
+  
+  .clock .time {
+    background: hsl(0, 2%, 17%);
+    opacity: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 1% 0%;
+    border-radius: 80px;
+    width: 100%;
+    display: flex;
+  }
+  
+  .clock .time span {
+    width: 100%;
+    text-align: center;
+    font-size: 200%;
+    font-weight: 500;
+    color: #fff;
+  
+  }
+  
+  .time span.colon {
+    width: 100%;
+  }
+  
+  .time span.ms-colon,
+  .time span.millisecond {
+    color: #a970f5;
+  }
+  
+  .clock .buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .buttons button {
+    outline: none;
+    border: none;
+    margin: 0 1%;
+    color: #ffffff;
+    background: #252424;
+    opacity: 95%;
+    font-size: 150%;
+    font-weight: 500;
+    border-radius: 50px;
+    padding: 1% 8%;
+    cursor: pointer;
+    box-shadow: 10px 10px 20px rgba(63, 62, 62, 0.09);
+  }
+  
+  .buttons button.active,
+  .buttons button.stopActive,
+  .buttons button.resetactive {
+    pointer-events: none;
+    opacity: 0.8;
+  }
+  .background{
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    opacity: 1;
+    border: #fff;
+    align-items: center;
+    text-align: center;
+    transform: scale(1) translateY(900%);
+    transition: transform 1s ease;
+  }
+  .background.active{
+    transform: scale(1)  translateY(0);
+  }
+
+.bg1{cursor: pointer;}
+.bg2{cursor: pointer;}

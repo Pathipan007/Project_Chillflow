@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+header{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3% 3%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    margin-top: -8%;
+    overflow: hidden;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.navigation {
+    margin-left: 5%;
+    margin-top: 10%;
+}
+
+.navigation a {
+    color: #ffffff;
+    font-size: 250%;
+    border-radius: 200px;
+    width: 45px;
+    height: 45px;
+}
+
+.logo {
+    position: absolute;
+    z-index: 5;
+    margin-top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+}
+
+.imagetrophy {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto; 
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2; /* กำหนดให้อยู่ใน layer ด้านหลังสุด */
+    overflow-y: auto;
+}
+
+.imagebackgruondtrophy1 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* ความสูงเท่ากับความสูงของหน้าจอ */
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -3; /* กำหนดให้อยู่ใน layer ด้านหลังสุด */
+    overflow-y: auto;
+}
+
+.totaltime {
+    margin-top: 10%;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background-clip: padding-box; /* ให้ border ไม่ครอบพื้นหลัง */
+    padding: 3%; /* ปรับขนาดของพื้นหลัง */
+    flex-direction: column; /* กำหนดให้แสดงเป็นคอลัมน์ */
+}
+
+.totaltime::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 80%; /* กำหนดความโปร่งแสงของพื้นหลัง */
+    background: #000000;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: auto; /* ช่องว่างด้านซ้าย */
+    margin-right: auto; /* ช่องว่างด้านขวา */
+    width: 28%; /* กำหนดความกว้าง */
+    height: auto;
+}
+
+.show-username{
+    align-items: center;
+    display: flex;
+    font-size: 120%;
+    margin-top: 30%;
+    margin-bottom: 2%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+     margin:auto;
+    width: 93%; /* กำหนดความกว้าง */
+    background-color:#EAA615;
+    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+}
+
+.show-username .imagelogosword{
+    margin:auto;
+    width: 10%;
+    height: 10%;
+}
+
+.time-list {
+    background-color: #ffffff;
+    overflow-y: auto; /* เกิดการเลื่อนแถบเลื่อน */
+    margin-left: auto; /* ช่องว่างด้านซ้าย */
+    margin-right: auto; /* ช่องว่างด้านขวา */
+    height: 50%;
+    width: 93%; /* กำหนดความกว้าง */
+    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+    margin-bottom: 10%;
+}
+
+
+.time-item {
+    z-index: 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    padding: 5%;
+    margin: 4%;
+    overflow-x: auto;
+    width: 93%;
+    height: auto;
+    box-shadow: 50px 50px 50px rgba(255, 255, 255, 0.25);
+    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+}
+
+.time-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+    z-index: -1;
+    opacity: 25%; /* กำหนดความโปร่งแสงของพื้นหลัง */
+    background-color: #EAA615; /* ตั้งค่าสีพื้นหลังเป็นโปร่งใส */
+}
+
+.date-time {
+    position: relative; /* เพื่อให้เส้นขอบอยู่หน้าข้อความ */
+    z-index: 1; /* ให้ข้อความอยู่หน้าเส้นขอบ */
+    margin-left: 2%;
+    left: 0;
+}
+
+.date-time .text-datetime {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.date-time .text-datetime .edit-textdate {
+    font-size: 90%;
+}
+
+.date-time .text-datetime .edit-texttime {
+    font-size: 120%;
+}
+
+.date-time .text-subtime {
+    font-size: 70%;
+    display: flex;
+}
+
+.border-timedata {
+    display: flex; /* เพิ่ม */
+    justify-content: center; /* เพิ่ม */
+    flex-direction: column;
+    transform: translateX(-3%);
+    margin-right: 2%;
+    padding: 1%;
+    position: absolute;
+    z-index: 2;
+    width: 40%;
+    height: 80%;
+    margin-left: -1%;
+    padding-right: 15%;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    right: 0;
+}
+
+.border-timedata::after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+    opacity: 25%; /* กำหนดความโปร่งแสงของพื้นหลัง */
+    background-color: #261D09; /* ตั้งค่าสีพื้นหลังเป็นโปร่งใส */
+}
+
+.historytime {
+    transform: translateY(-30%);
+    z-index: 2;
+    font-size: 150%;
+    padding-top: 10%;
+    position: absolute;
+    right: 0; /* เริ่มจากด้านขวา */
+    margin-right: 10%;
+}
+
+.historytimeformat {
+    transform: translateY(120%);
+    z-index: 3;
+    font-size: 60%;
+    position: absolute;
+    right: 0; /* เริ่มจากด้านขวา */
+    margin-right: 10%;
+}
+
+
+.no-timedata {
+    background-color: #ffffff;
+    overflow-y: auto; /* เกิดการเลื่อนแถบเลื่อน */
+    margin-left: auto; /* ช่องว่างด้านซ้าย */
+    margin-right: auto; /* ช่องว่างด้านขวา */
+    height: 50%;
+    width: 93%; /* กำหนดความกว้าง */
+    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+    margin-bottom: 10%;
+    text-align: center;
+}
+
