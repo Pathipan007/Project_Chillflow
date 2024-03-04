@@ -1,17 +1,18 @@
 <?php
-session_start();
-include('session.php');
-$timedata_user_id = $_SESSION['timedata_user_id'];
-$timedata_user_name = $_SESSION['timedata_user_name'];
-$totaltime_user_id = $_SESSION['totaltime_user_id']; 
-$totaltime_user_name = $_SESSION['totaltime_user_name'];
+    session_start();
+    include('session.php');
+    // ค่าต่างๆของผู้ใช้ที่เข้าสู่ระบบอยู่ ถูกเก็บไว้ใน session
+    $timedata_user_id = $_SESSION['timedata_user_id'];
+    $timedata_user_name = $_SESSION['timedata_user_name'];
+    $totaltime_user_id = $_SESSION['totaltime_user_id']; 
+    $totaltime_user_name = $_SESSION['totaltime_user_name'];
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Show time</title>
     <link rel="stylesheet" href="showtime.css">
 </head>
@@ -26,13 +27,14 @@ $totaltime_user_name = $_SESSION['totaltime_user_name'];
     <img class="imagetrophy" src="images/trophyv1.png">
     <img class="imagebackgruondtrophy1" src="images/backgroundtrophy1.jpg">
 
- <?php 
+    <?php
+        // Query ข้อมูล ดึงข้อมูลจากฐานข้อมูลเมื่อ $totaltime_user_id(ผู้ใช้ที่เข้าสู่ระบบ) มีค่าเท่ากับ totaltime_user_id(ฐานข้อมูล)
         $sql_totaltime_data = "SELECT totaltime_user_name, timeformat FROM totaltime_data WHERE totaltime_user_id='$totaltime_user_id'";
-        $result_totaltime_data = $conn->query($sql_totaltime_data);
-        
+        $result_totaltime_data = $db->query($sql_totaltime_data);
+        // มีข้อมูลที่ query 1 รายการ สามารถนำตัวแปรไปใช้นอกลูปได้
         if ($result_totaltime_data->num_rows > 0) {
             while ($row_totaltime_data = $result_totaltime_data->fetch_assoc()) {
-                $totaltime_user_name_result = $row_totaltime_data["totaltime_user_name"];
+                $totaltime_user_name_result = $row_totaltime_data["totaltime_user_name"]; // Note : ระวังตัวแปรซ้ำกับ $totaltime_user_name ต้องเปลี่ยน
                 $timeformat_result = $row_totaltime_data["timeformat"];
             }
         } else {
@@ -51,9 +53,10 @@ $totaltime_user_name = $_SESSION['totaltime_user_name'];
 
     <div class='time-list'>
         <?php
+            // Query ข้อมูล ดึงข้อมูลจากฐานข้อมูลเมื่อ $timedata_user_id(ผู้ใช้ที่เข้าสู่ระบบ) มีค่าเท่ากับ timedata_user_id(ฐานข้อมูล)
             $sql_timedata = "SELECT subtime,datetime,timedataformat FROM time_data WHERE timedata_user_id='$timedata_user_id' ORDER BY id DESC LIMIT 20";
-            $result_timedata = $conn->query($sql_timedata);
-
+            $result_timedata = $db->query($sql_timedata);
+            // ถ้ามีข้อมูลที่ query มากกว่า 1 รายการ จะใช้ while loop เพื่อวนลูปผ่านข้อมูลที่ query มาและแสดงผลลัพธ์ในรูปแบบของ HTML ต้องเขียนในลูปเท่านั้น
             if ($result_timedata->num_rows > 0) {
                 while ($row_timedata = $result_timedata->fetch_assoc()) {
                     $subtime = $row_timedata["subtime"];
@@ -83,7 +86,7 @@ $totaltime_user_name = $_SESSION['totaltime_user_name'];
             } else {
                 echo "<p class='no-timedata'>You don't have time history.</p>";
             }
-            $conn->close();
+            $db->close();
         ?>
     </div>
     <script

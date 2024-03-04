@@ -157,7 +157,7 @@
     
   }
   .music.active{
-    transform: scale(1) translateY(110%);
+    transform: scale(1) translateY(90%);
   }
   .icon-stat{
     cursor: pointer;
@@ -221,14 +221,14 @@
   .buttons button {
     outline: none;
     border: none;
-    margin: 0 1%;
+    margin: 0 0.5%;
     color: #ffffff;
     background: #252424;
     opacity: 95%;
     font-size: 150%;
     font-weight: 500;
     border-radius: 50px;
-    padding: 1% 8%;
+    padding: 1% 6%;
     cursor: pointer;
     box-shadow: 10px 10px 20px rgba(63, 62, 62, 0.09);
   }
